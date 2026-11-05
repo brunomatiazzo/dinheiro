@@ -1,0 +1,133 @@
+{
+  "title": "Rastreamento de Celular",
+  "author": "Hermes",
+  "page_size": "A4",
+  "page_count": 1,
+  "fields": [
+    {
+      "name": "telefone",
+      "type": "text",
+      "page": 1,
+      "label": "Telefone / WhatsApp",
+      "label_box": [
+        72,
+        720,
+        150,
+        734
+      ],
+      "entry_box": [
+        160,
+        716,
+        460,
+        736
+      ],
+      "value": "",
+      "tooltip": "Número do dispositivo rastreado"
+    },
+    {
+      "name": "status",
+      "type": "dropdown",
+      "page": 1,
+      "label": "Status",
+      "label_box": [
+        72,
+        680,
+        150,
+        694
+      ],
+      "entry_box": [
+        160,
+        676,
+        460,
+        696
+      ],
+      "options": [
+        "Online",
+        "Offline",
+        "Sem sinal"
+      ],
+      "value": "Online"
+    },
+    {
+      "name": "ocorrencia",
+      "type": "text",
+      "page": 1,
+      "label": "Última ocorrência",
+      "label_box": [
+        72,
+        640,
+        150,
+        654
+      ],
+      "entry_box": [
+        160,
+        636,
+        460,
+        656
+      ],
+      "value": ""
+    },
+    {
+      "name": "localizacao",
+      "type": "text",
+      "page": 1,
+      "label": "Último localização",
+      "label_box": [
+        72,
+        600,
+        150,
+        614
+      ],
+      "entry_box": [
+        160,
+        596,
+        460,
+        616
+      ],
+      "value": ""
+    },
+    {
+      "name": "acoes",
+      "type": "dropdown",
+      "page": 1,
+      "label": "Ações",
+      "label_box": [
+        72,
+        560,
+        150,
+        574
+      ],
+      "entry_box": [
+        160,
+        556,
+        460,
+        576
+      ],
+      "options": [
+        "Nenhuma",
+        "Notificar",
+        "Bloquear"
+      ],
+      "value": "Nenhuma"
+    },
+    {
+      "name": "testemunha",
+      "type": "text",
+      "page": 1,
+      "label": "Testemunha (opcional)",
+      "label_box": [
+        72,
+        520,
+        150,
+        534
+      ],
+      "entry_box": [
+        160,
+        516,
+        460,
+        536
+      ],
+      "value": ""
+    }
+  ]
+}
