@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+<meta name="description" content="Dashboard de telemetria em tempo real">
+<title>Rastreador de Celular - Dashboard</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/icon-512.png">
+<link rel="stylesheet" href="dashboard.css">
+<style>
+  .loading { color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <div class="brand">
+      <h1>📟 Rastreador</h1>
+      <p>Monitoramento de telemetria em tempo real</p>
+    </div>
+    <div class="status-pill" id="statusPill"><span class="dot"></span>online</div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Temporizador -->
+  <section class="card">
+    <div class="card-header">
+      <h2>⏱️ Tempo</h2>
+      <span class="subtitle" id="timerDisplay">00:00:00</span>
+    </div>
+    <div class="card-body">
+      <div class="timer" id="timer">00:00:00</div>
+    </div>
+  </section>
+
+  <!-- Dados de telemetria -->
+  <section class="card">
+    <div class="card-header">
+      <h2>📡 Telemetria</h2>
+      <div class="flex">
+        <label class="chip">online <input type="checkbox" class="chip-toggle" checked data-filter="status" value="online"></label>
+        <label class="chip">offline <input type="checkbox" class="chip-toggle" checked data-filter="status" value="offline"></label>
+        <label class="chip">sinais <input type="checkbox" class="chip-toggle" checked data-filter="status" value="sinais"></label>
+      </div>
+    </div>
+    <div class="card-body" id="telemetryBody">
+      <p class="loading">Carregando...</p>
+    </div>
+  </section>
+
+  <!-- Mapa -->
+  <section class="card map-card">
+    <div class="card-header">
+      <h2>🗺️ Mapa</h2>
+      <div class="flex">
+        <label class="chip">bateria <input type="checkbox" class="chip-toggle" data-filter="bateria" value="on"></label>
+        <label class="chip">wifi <input type="checkbox" class="chip-toggle" data-filter="wifi" value="on"></label>
+      </div>
+    </div>
+    <div class="card-body">
+      <div id="map"></div>
+      <p class="loading map-loading" id="mapLoading">Carregando mapa...</p>
+    </div>
+  </section>
+
+  <!-- Resumo -->
+  <section class="card">
+    <div class="card-header"><h2>📊 Resumo</h2></div>
+    <div class="card-body grid-4">
+      <div class="stat"><span class="stat-value" id="totalEvents">0</span><span class="stat-label">Eventos</span></div>
+      <div class="stat"><span class="stat-value" id="avgSpeed">0</span><span class="stat-label">Velocidade média (km/h)</span></div>
+      <div class="stat"><span class="stat-value" id="maxSpeed">0</span><span class="stat-label">Velocidade máx. (km/h)</span></div>
+      <div class="stat"><span class="stat-value" id="distance">0</span><span class="stat-label">Distância (km)</span></div>
+    </div>
+  </section>
+
+  <!-- Radares / Alertas -->
+  <section class="card">
+    <div class="card-header"><h2>⚠️ Alertas</h2></div>
+    <div class="card-body" id="alertsBody">
+      <p class="loading">Carregando...</p>
+    </div>
+  </section>
+
+  <!-- Setores / Geofence -->
+  <section class="card">
+    <div class="card-header"><h2>📍 Geofence</h2></div>
+    <div class="card-body" id="geofenceBody">
+      <p class="loading">Carregando...</p>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
